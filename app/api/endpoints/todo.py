@@ -10,7 +10,7 @@ todo_router = APIRouter(
 )
 
 
-async  def get_todo_service(uow: IUnitOfWork = Depends(UnitOfWork)) -> ToDoService:
+async def get_todo_service(uow: IUnitOfWork = Depends(UnitOfWork)) -> ToDoService:
     return ToDoService(uow)
 
 

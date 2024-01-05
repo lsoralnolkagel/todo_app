@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c1a313c-7a47-4b1a-a358-c40774f74275" name="Changes" comment="pattern Unit of Work" />
+    <list default="true" id="8c1a313c-7a47-4b1a-a358-c40774f74275" name="Changes" comment="added requirements.txt">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/endpoints/todo.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/endpoints/todo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/schemas/todo.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/schemas/todo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/repositories/base_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/base_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/utils/unitofwork.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/utils/unitofwork.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -159,7 +165,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704467963256</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="added requirements.txt">
+      <option name="closed" value="true" />
+      <created>1704468261993</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1704468261993</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -180,6 +194,7 @@
     <MESSAGE value="connected Alembic" />
     <MESSAGE value="pattern repository/DAO" />
     <MESSAGE value="pattern Unit of Work" />
-    <option name="LAST_COMMIT_MESSAGE" value="pattern Unit of Work" />
+    <MESSAGE value="added requirements.txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="added requirements.txt" />
   </component>
 </project>

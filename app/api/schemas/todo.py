@@ -4,6 +4,7 @@ from pydantic import BaseModel, ConfigDict
 
 
 class ToDoCreate(BaseModel):
+    title: str
     description: str
     completed: bool | None = False
 
