@@ -1,9 +1,8 @@
 from fastapi import APIRouter, Depends
-from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.api.schemas.todo import ToDoCreate, ToDoFromDB
-from app.db.database import get_async_session
-from app.repositories.todo_repository import ToDoRepository, SqlAlchemyToDoRepository
+from app.api.schemas.todo import ToDoFromDB, ToDoCreate
+from app.services.todo_service import ToDoService
+from app.utils.unitofwork import UnitOfWork, IUnitOfWork
 
 todo_router = APIRouter(
     prefix="/todo",
@@ -11,14 +10,15 @@ todo_router = APIRouter(
 )
 
 
-async def get_todo_repository(session: AsyncSession = Depends(get_async_session)) -> ToDoRepository:
-    return SqlAlchemyToDoRepository(session)
+async  def get_todo_service(uow: IUnitOfWork = Depends(UnitOfWork)) -> ToDoService:
+    return ToDoService(uow)
 
 
-@todo_router.get("/", response_model=list[ToDoFromDB])
-async def get_todos(repo: ToDoRepository = Depends(get_todo_repository)):
-    return await repo.get_todos()
+@todo_router.post("/todos/", response_model=ToDoFromDB)
+async def create_todo(todo_data: ToDoCreate, todo_service: ToDoService = Depends(get_todo_service)):
+    return await todo_service.add_todo(todo_data)
 
-@todo_router.post("/", response_model=ToDoFromDB)
-async def create_todo(todo: ToDoCreate, repo: ToDoRepository = Depends(get_todo_repository)):
-    return await repo.create_todo(todo)
+
+@todo_router.get("/todos/", response_model=list[ToDoFromDB])
+async def get_todos(todo_service: ToDoService = Depends(get_todo_service)):
+    return await todo_service.get_todos()
